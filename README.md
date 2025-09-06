@@ -28,8 +28,9 @@ library(UCell)
 # keep only genes present
 DDR_early_use <- intersect(DDR_early, rownames(Seu))
 RS_use        <- intersect(RS,        rownames(Seu))
-Seu <- AddModuleScore_UCell(Seu, features = list(DDR_early = DDR_early_use, RS = RS_use))  #Seu is a seurat object containing single-cell data from SSc+SjS patients
-# Columns created: 'UCell_DDR_early', 'UCell_RS'
+Seu <- AddModuleScore_UCell(Seu, features = list(DDR_early = DDR_early_use, RS = RS_use))
+#Seu is a seurat object containing single-cell data from SSc+SjS patients and all the metadata
+# Columns created would be: 'UCell_DDR_early', 'UCell_RS'
 
 #Adjust for replication stress
 library(dplyr)
